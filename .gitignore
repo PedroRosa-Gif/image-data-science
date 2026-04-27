@@ -8,3 +8,12 @@ get-slices/get-slices
 MIP/MIP
 reslicing/reslicing
 reslicing/MIP
+volumetric-segmentation/DIFT
+volumetric-segmentation/MIP
+
+volumetric-segmentation/data
+volumetric-segmentation/nnU-Net
+
+venv
+.venv
+
