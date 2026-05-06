@@ -385,11 +385,20 @@ class App(QWidget):
             # 4. Execução do Binário DIFT
             # subprocess.run é síncrono, a interface vai esperar aqui
             self.set_status("Processando algoritmos no DIFT...")
-            result = subprocess.run(
-                [DIFT_BIN, img_path, seed_path, TEMP_DIR, "true"],
-                capture_output=True,
-                text=True
-            )
+            # result = subprocess.run(
+            #     [DIFT_BIN, img_path, seed_path, TEMP_DIR, "true"],
+            #     capture_output=True,
+            #     text=True
+            # )
+
+            result = subprocess.run([
+                "docker", "run", "--rm",
+                "-v", f"{os.path.abspath(TEMP_DIR)}:/data",
+                "dift-backend",
+                "/data/img.scn",
+                "/data/seed.scn",
+                "/data/output.scn"
+            ])
 
             # 5. Verificação de Saída
             result_path = os.path.join(TEMP_DIR, "seg-step-1.scn")
