@@ -17,3 +17,7 @@ volumetric-segmentation/nnU-Net
 venv
 .venv
 
+temp
+
+DIFT
+MIP
