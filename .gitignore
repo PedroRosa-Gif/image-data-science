@@ -13,6 +13,8 @@ volumetric-segmentation/MIP
 
 volumetric-segmentation/data
 volumetric-segmentation/nnU-Net
+volumetric-segmentation/code/output
+volumetric-segmentation/code/visualization
 
 venv
 .venv

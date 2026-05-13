@@ -12,17 +12,18 @@ from monai.bundle import ConfigParser, download
 BUNDLE_NAME = "brats_mri_segmentation"
 BUNDLE_DIR = "./models-saved"
 
-T1_PATH    = "t1.nii.gz"
-T1C_PATH   = "t1c.nii.gz"
-T2_PATH    = "t2.nii.gz"
-FLAIR_PATH = "flair.nii.gz"
+DEFAULT_PATH = "../data/95_Glioma/BraTS-SSA-00002-000/BraTS-SSA-00002-000-"
+
+T1_PATH    = DEFAULT_PATH + "t1.nii.gz"
+T1C_PATH   = DEFAULT_PATH + "t1n.nii.gz"
+T2_PATH    = DEFAULT_PATH + "t2.nii.gz"
+FLAIR_PATH = DEFAULT_PATH + "flair.nii.gz"
 
 OUTPUT_SEEDS = "seeds.scn"
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 CONF_THRESH = 0.9
-
 
 # =========================
 # 1. DOWNLOAD + LOAD MODEL
